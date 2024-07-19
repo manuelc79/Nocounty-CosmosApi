@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin(origins = {"https://cosmos-seven-delta.vercel.app/", "http://localhost:3000", "https://cosmosapi.up.railway.app/swagger-ui"})
 public class UsuarioController {
 
     @Autowired
@@ -23,6 +24,7 @@ public class UsuarioController {
 
     @PostMapping
     @Transactional
+
     @Operation(summary = "Registra un nuevo usuario en la base de datos")
     public ResponseEntity<?> registrarUsuario(@RequestBody @Valid DatosRegistroUsuario datosRegistroUsuario) {
             try {
