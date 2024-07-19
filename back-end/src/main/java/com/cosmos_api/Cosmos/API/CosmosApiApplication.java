@@ -19,7 +19,7 @@ public class CosmosApiApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("https://cosmos-seven-delta.vercel.app/","http://localhost:3000","https://cosmosapi.up.railway.app/swagger-ui/index.html")
+						.allowedOrigins("https://cosmos-seven-delta.vercel.app/","http://localhost:3000","https://cosmosapi.up.railway.app/swagger-ui")
 						.allowedMethods("*")
 						.allowedHeaders("*");
 			}
