@@ -13,17 +13,5 @@ public class CosmosApiApplication {
 		SpringApplication.run(CosmosApiApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**")
-						.allowedOrigins("https://cosmos-seven-delta.vercel.app/","http://localhost:3000","https://cosmosapi.up.railway.app/swagger-ui")
-						.allowedMethods("*")
-						.allowedHeaders("*");
-			}
-		};
-	}
 
 }

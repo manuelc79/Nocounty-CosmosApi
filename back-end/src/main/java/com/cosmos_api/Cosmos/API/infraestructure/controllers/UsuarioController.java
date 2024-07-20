@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = {"https://cosmos-seven-delta.vercel.app/", "http://localhost:3000", "https://cosmosapi.up.railway.app/swagger-ui"})
 public class UsuarioController {
 
     @Autowired
