@@ -16,8 +16,8 @@ public class SpringDocConfiguration {
     @Bean
     public OpenAPI customOpenApi(){
         return new OpenAPI()
-                .addServersItem(new Server().url("https://cosmosapi.up.railway.app/"))
-                    .addServersItem(new Server().url("http://localhost:8080"))
+//                .addServersItem(new Server().url("https://cosmosapi.up.railway.app/"))
+//                    .addServersItem(new Server().url("http://localhost:8080"))
                 .components(new Components()
                 .addSecuritySchemes("bearer-key",
                         new SecurityScheme().
