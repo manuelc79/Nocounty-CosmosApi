@@ -1,5 +1,7 @@
 package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 
+import com.cosmos_api.Cosmos.API.aplication.dto.token.DatosJwtToken;
+import com.cosmos_api.Cosmos.API.domain.services.TokenService;
 import com.cosmos_api.Cosmos.API.domain.services.UserService;
 import com.cosmos_api.Cosmos.API.aplication.security.SecurityFilter;
 import com.cosmos_api.Cosmos.API.aplication.dto.usuario.DatosRegistroUsuario;
@@ -19,6 +21,9 @@ public class UsuarioController {
     private UserService userService;
 
     @Autowired
+    TokenService tokenService;
+
+    @Autowired
     SecurityFilter securityFilter;
 
     @PostMapping
@@ -27,13 +32,21 @@ public class UsuarioController {
     @Operation(summary = "Registra un nuevo usuario en la base de datos")
     public ResponseEntity<?> registrarUsuario(@RequestBody @Valid DatosRegistroUsuario datosRegistroUsuario) {
             try {
-                userService.registrarUsuario(datosRegistroUsuario);
+                var usuario = userService.registrarUsuario(datosRegistroUsuario);
+                var token = tokenService.generarToken(usuario);
                 return ResponseEntity.status(HttpStatus.CREATED)
-                        .body("Usuario creado Correctamente");
+                        .body(new DatosJwtToken(token));
             } catch (Exception e){
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                         .body("El correo electrónico ya está en uso");
             }
+    }
+
+    @GetMapping("/{id}")
+    @Operation(summary = "Recibe el mail del usuario, lo busca en la base de datos y devuelve los datos del usuario")
+    public ResponseEntity<?> buscarPorMail(@PathVariable("id") Long id) {
+        var usuario = userService.buscarPorMail(id);
+        return ResponseEntity.ok(usuario);
     }
 
 

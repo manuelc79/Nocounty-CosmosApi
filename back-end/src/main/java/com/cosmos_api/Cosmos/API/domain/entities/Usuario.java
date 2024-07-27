@@ -24,6 +24,9 @@ public class Usuario implements UserDetails {
     private String email;
     private String password;
 
+    @OneToOne(mappedBy = "usuario" ,cascade = CascadeType.ALL)
+    private DetallesUsuario detallesUsuario;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
