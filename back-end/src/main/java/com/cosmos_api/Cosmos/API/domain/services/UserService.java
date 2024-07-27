@@ -51,7 +51,7 @@ public class UserService {
         return usuario;
     }
 
-    public DatosRespuestaUsuario buscarPorMail(Long id) {
+    public DatosRespuestaUsuario buscarPorId(Long id) {
         var usuario = usuarioRepository.findById(id);
         if (usuario != null) {
             DetallesUsuario detalles = detallesUsuarioRepository.findByUsuarioId(id);

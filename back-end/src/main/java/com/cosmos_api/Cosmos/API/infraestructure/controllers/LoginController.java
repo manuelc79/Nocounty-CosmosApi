@@ -40,7 +40,7 @@ public class LoginController {
                     datosAutenticacionUsuario.password());
             var usuarioAutenticado = authenticationManager.authenticate(authToken);
             var JWTtoken = tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());
-            return ResponseEntity.ok(new DatosJwtToken(JWTtoken));
+            return ResponseEntity.ok(new DatosJwtToken(JWTtoken, ((Usuario) usuarioAutenticado.getPrincipal()).getId()));
 
         } catch (BadCredentialsException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Contraseña invalida");
