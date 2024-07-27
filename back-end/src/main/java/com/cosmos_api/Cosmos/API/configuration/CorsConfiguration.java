@@ -12,12 +12,9 @@ public class CorsConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://cosmos-seven-delta.vercel.app/",
-                        "http://localhost:3000",
-                        "https://cosmosapi.up.railway.app/swagger-ui/",
-                        "http://localhost:8080/swagger-ui",
-                        "http://localhost:8080/")
+                .allowedOrigins("*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT")
-                .allowedHeaders("*");
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }
