@@ -1,6 +1,6 @@
 package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 
-import com.cosmos_api.Cosmos.API.domain.entities.Usuario;
+import com.cosmos_api.Cosmos.API.domain.entities.user.Usuario;
 import com.cosmos_api.Cosmos.API.aplication.dto.login.DatosAutenticacionUsuario;
 import com.cosmos_api.Cosmos.API.aplication.dto.token.DatosJwtToken;
 import com.cosmos_api.Cosmos.API.domain.services.TokenService;

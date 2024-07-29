@@ -1,8 +1,8 @@
 package com.cosmos_api.Cosmos.API.domain.services.implementation;
 
 import com.cosmos_api.Cosmos.API.aplication.dto.dtoProducts;
-import com.cosmos_api.Cosmos.API.domain.entities.Images;
-import com.cosmos_api.Cosmos.API.domain.entities.Products;
+import com.cosmos_api.Cosmos.API.domain.entities.products.Images;
+import com.cosmos_api.Cosmos.API.domain.entities.products.Products;
 import com.cosmos_api.Cosmos.API.domain.repository.RepositoryImages;
 import com.cosmos_api.Cosmos.API.domain.repository.RepositoryProducts;
 import com.cosmos_api.Cosmos.API.domain.services.interfaces.IProductsService;

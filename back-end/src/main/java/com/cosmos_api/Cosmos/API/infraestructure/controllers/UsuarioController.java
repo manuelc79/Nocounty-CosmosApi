@@ -1,11 +1,11 @@
 package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 
 import com.cosmos_api.Cosmos.API.aplication.dto.token.DatosJwtToken;
-import com.cosmos_api.Cosmos.API.aplication.dto.usuario.DtoBuscarUsuario;
+import com.cosmos_api.Cosmos.API.aplication.dto.user.DtoBuscarUsuario;
 import com.cosmos_api.Cosmos.API.domain.services.TokenService;
 import com.cosmos_api.Cosmos.API.domain.services.UserService;
 import com.cosmos_api.Cosmos.API.aplication.security.SecurityFilter;
-import com.cosmos_api.Cosmos.API.aplication.dto.usuario.DatosRegistroUsuario;
+import com.cosmos_api.Cosmos.API.aplication.dto.user.DatosRegistroUsuario;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

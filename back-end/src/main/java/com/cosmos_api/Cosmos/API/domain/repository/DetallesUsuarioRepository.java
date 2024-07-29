@@ -1,9 +1,7 @@
 package com.cosmos_api.Cosmos.API.domain.repository;
 
-import com.cosmos_api.Cosmos.API.domain.entities.DetallesUsuario;
+import com.cosmos_api.Cosmos.API.domain.entities.user.DetallesUsuario;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 public interface DetallesUsuarioRepository extends JpaRepository<DetallesUsuario, Long> {
 //    @Query("""

@@ -1,9 +1,9 @@
 package com.cosmos_api.Cosmos.API.domain.services;
 
-import com.cosmos_api.Cosmos.API.aplication.dto.usuario.DatosRegistroUsuario;
-import com.cosmos_api.Cosmos.API.aplication.dto.usuario.DatosRespuestaUsuario;
-import com.cosmos_api.Cosmos.API.domain.entities.DetallesUsuario;
-import com.cosmos_api.Cosmos.API.domain.entities.Usuario;
+import com.cosmos_api.Cosmos.API.aplication.dto.user.DatosRegistroUsuario;
+import com.cosmos_api.Cosmos.API.aplication.dto.user.DatosRespuestaUsuario;
+import com.cosmos_api.Cosmos.API.domain.entities.user.DetallesUsuario;
+import com.cosmos_api.Cosmos.API.domain.entities.user.Usuario;
 import com.cosmos_api.Cosmos.API.domain.repository.DetallesUsuarioRepository;
 import com.cosmos_api.Cosmos.API.domain.repository.UsuarioRepository;
 import com.cosmos_api.Cosmos.API.infraestructure.errores.excepciones.EmailAlreadyExistsException;

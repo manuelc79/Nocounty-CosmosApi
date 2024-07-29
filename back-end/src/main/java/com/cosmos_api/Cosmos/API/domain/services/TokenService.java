@@ -5,7 +5,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.cosmos_api.Cosmos.API.domain.entities.Usuario;
+import com.cosmos_api.Cosmos.API.domain.entities.user.Usuario;
 import com.cosmos_api.Cosmos.API.infraestructure.errores.excepciones.TokenHasExpiredException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

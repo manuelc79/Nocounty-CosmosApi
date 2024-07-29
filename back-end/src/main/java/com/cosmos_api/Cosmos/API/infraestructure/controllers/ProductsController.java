@@ -1,7 +1,7 @@
 package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 
 import com.cosmos_api.Cosmos.API.aplication.dto.dtoProducts;
-import com.cosmos_api.Cosmos.API.domain.entities.Products;
+import com.cosmos_api.Cosmos.API.domain.entities.products.Products;
 import com.cosmos_api.Cosmos.API.domain.services.interfaces.IProductsService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;

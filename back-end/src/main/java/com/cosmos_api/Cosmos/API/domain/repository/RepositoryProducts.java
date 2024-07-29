@@ -1,6 +1,6 @@
 package com.cosmos_api.Cosmos.API.domain.repository;
 
-import com.cosmos_api.Cosmos.API.domain.entities.Products;
+import com.cosmos_api.Cosmos.API.domain.entities.products.Products;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
