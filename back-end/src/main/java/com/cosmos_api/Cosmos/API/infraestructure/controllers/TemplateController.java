@@ -50,6 +50,6 @@ public class TemplateController {
     @Operation(summary = "Busca un Slug según UsuarioId")
     public ResponseEntity<?> buscarSlug(@RequestBody DtoBuscaIdTemplate idTemplate) {
         var slug = templateService.buscarTemplate(idTemplate);
-        return ResponseEntity.ok(new DtoSlugTemplate(slug.getSlug()));
+        return ResponseEntity.ok(new DtoSlugTemplate(slug.getSlug()));// devuelve el slug
     }
 }
