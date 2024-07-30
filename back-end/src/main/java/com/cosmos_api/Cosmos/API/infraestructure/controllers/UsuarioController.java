@@ -43,7 +43,7 @@ public class UsuarioController {
             }
     }
 
-    @PostMapping("/find")
+    @PostMapping("/find") // si bien debe ser un método get el front solicito que sea método post
     @Operation(summary = "Recibe el Id del usuario, lo busca en la base de datos y devuelve los datos del usuario")
     public ResponseEntity<?> buscarPorMail(@RequestBody DtoBuscarUsuario buscarUsuario) {
         var usuario = userService.buscarPorId(buscarUsuario.id());

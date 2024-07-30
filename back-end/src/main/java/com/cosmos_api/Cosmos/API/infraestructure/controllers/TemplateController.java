@@ -3,7 +3,6 @@ package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoBuscaIdTemplate;
 import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoRegistroTemplate;
 import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoRespuestaTemplate;
-import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoSlugTemplate;
 import com.cosmos_api.Cosmos.API.domain.services.TemplateService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -12,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/template")
@@ -35,21 +36,17 @@ public class TemplateController {
     }
 
     @GetMapping
-    @Operation(summary = "Busca un template según UsuarioId")
-    public ResponseEntity<?> mostrarPorId(@RequestBody DtoBuscaIdTemplate idTemplate) {
-        var template = templateService.buscarTemplate(idTemplate);
-        return ResponseEntity.ok(new DtoRespuestaTemplate(
-                template.getId(),
-                template.getName(),
-                template.getImage(),
-                template.getSlug(),
-                template.getVariant().toString()));
+    @Operation(summary = "Busca todos los templates de un usuario según usuarioId")
+    public ResponseEntity<?> mostrarPorId(@RequestBody DtoBuscaIdTemplate idUsuario) {
+        var templates = templateService.buscarTodosLosTemplates(idUsuario.usuarioId());
+        return ResponseEntity.ok(templates.stream()
+                .map(template -> new DtoRespuestaTemplate(
+                    template.getId(),
+                    template.getName(),
+                    template.getImage(),
+                    template.getSlug(),
+                    template.getVariant().toString()))
+                .collect(Collectors.toList()));
     }
 
-    @GetMapping("/slug")
-    @Operation(summary = "Busca un Slug según UsuarioId")
-    public ResponseEntity<?> buscarSlug(@RequestBody DtoBuscaIdTemplate idTemplate) {
-        var slug = templateService.buscarTemplate(idTemplate);
-        return ResponseEntity.ok(new DtoSlugTemplate(slug.getSlug()));// devuelve el slug
-    }
 }

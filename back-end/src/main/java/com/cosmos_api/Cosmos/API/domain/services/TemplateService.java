@@ -1,14 +1,15 @@
 package com.cosmos_api.Cosmos.API.domain.services;
 
-import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoBuscaIdTemplate;
 import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoRegistroTemplate;
 import com.cosmos_api.Cosmos.API.domain.entities.template.Template;
 import com.cosmos_api.Cosmos.API.domain.repository.TemplateRepository;
 import com.cosmos_api.Cosmos.API.domain.repository.UsuarioRepository;
-import com.cosmos_api.Cosmos.API.infraestructure.errores.excepciones.EmailAlreadyExistsException;
+
 import com.cosmos_api.Cosmos.API.infraestructure.errores.excepciones.UsuarioNoEncontradoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TemplateService {
@@ -32,11 +33,8 @@ public class TemplateService {
         return slug;
     }
 
-
     public Template registrarTemplate(DtoRegistroTemplate dtoRegistroTemplate) {
-        if(templateRepository.findByUsuarioId(dtoRegistroTemplate.usuarioId()) != null) {
-           throw new EmailAlreadyExistsException("Ya existe un template para este usuario");
-        }
+
         var usuario = usuarioRepository.findById(dtoRegistroTemplate.usuarioId());
         String slug = generateSlug(dtoRegistroTemplate.name(), usuario.get().getEmail());
         Template template = new Template();
@@ -47,15 +45,14 @@ public class TemplateService {
         template.setUsuario(usuario.get());
 
         template = templateRepository.save(template);
-
         return template;
 
     }
 
-    public Template buscarTemplate(DtoBuscaIdTemplate idTemplate) {
-        var template = templateRepository.findByUsuarioId(idTemplate.usuarioId());
+    public List<Template> buscarTodosLosTemplates(Long usuarioId) {
+        var template = templateRepository.findByUsuarioId(usuarioId);
         if (template == null) {
-            throw new UsuarioNoEncontradoException("Template no encontrado");
+            throw new UsuarioNoEncontradoException("No se encontró Templates para el Usuario solicitado");
         }
         return template;
     }

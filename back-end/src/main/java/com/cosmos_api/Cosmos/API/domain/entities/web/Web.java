@@ -1,18 +1,21 @@
-package com.cosmos_api.Cosmos.API.domain.entities.template;
+package com.cosmos_api.Cosmos.API.domain.entities.web;
 
+import com.cosmos_api.Cosmos.API.domain.entities.template.Variants;
 import com.cosmos_api.Cosmos.API.domain.entities.user.Usuario;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@Table(name = "templates")
-@Entity(name = "Template")
+@Table(name = "webs")
+@Entity(name = "Web")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Template {
+public class Web {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,5 +34,7 @@ public class Template {
     @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     @JsonBackReference
     private Usuario usuario;
+
+    private Long grupoId;
 
 }

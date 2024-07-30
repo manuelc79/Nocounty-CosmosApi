@@ -1,5 +1,7 @@
 package com.cosmos_api.Cosmos.API.domain.entities.user;
 
+import com.cosmos_api.Cosmos.API.domain.entities.template.Template;
+import com.cosmos_api.Cosmos.API.domain.entities.web.Web;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,10 +31,19 @@ public class Usuario implements UserDetails {
     @JsonIgnore
     private DetallesUsuario detallesUsuario;
 
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Template> templates; // Maneja múltiples templates
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Web> webs; // Maneja múltiples Webs
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
+
 
     @Override
     public String getPassword(){
