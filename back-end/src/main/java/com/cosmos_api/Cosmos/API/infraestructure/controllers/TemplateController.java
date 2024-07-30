@@ -35,7 +35,7 @@ public class TemplateController {
                         template.getVariant().toString()));
     }
 
-    @GetMapping
+    @PostMapping("/find")
     @Operation(summary = "Busca todos los templates de un usuario según usuarioId")
     public ResponseEntity<?> mostrarPorId(@RequestBody DtoBuscaIdTemplate idUsuario) {
         var templates = templateService.buscarTodosLosTemplates(idUsuario.usuarioId());

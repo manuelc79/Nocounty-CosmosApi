@@ -36,7 +36,7 @@ public class WebController {
                         web.getGrupoId()));
     }
 
-    @GetMapping
+    @PostMapping("/find")
     @Operation(summary = "Busca todas las Webs de un usuario según usuarioId")
     public ResponseEntity<?> mostrarPorId(@RequestBody DtoBuscaIdWeb idUsuario) {
         var webs = webService.buscarTodasLasWebs(idUsuario.usuarioId());
