@@ -6,6 +6,7 @@ import com.cosmos_api.Cosmos.API.domain.services.TokenService;
 import com.cosmos_api.Cosmos.API.domain.services.UserService;
 import com.cosmos_api.Cosmos.API.aplication.security.SecurityFilter;
 import com.cosmos_api.Cosmos.API.aplication.dto.user.DatosRegistroUsuario;
+import com.cosmos_api.Cosmos.API.infraestructure.errores.DtoRespuestaErrores;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,8 @@ public class UsuarioController {
                         .body(new DatosJwtToken(token, usuario.getId()));
             } catch (Exception e){
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                        .body("El correo electrónico ya está en uso");
+                        .body(new DtoRespuestaErrores(HttpStatus.CONFLICT.toString(),
+                                "El correo electrónico ya está en uso"));
             }
     }
 

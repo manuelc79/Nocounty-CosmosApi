@@ -3,6 +3,7 @@ package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoBuscaIdTemplate;
 import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoRegistroTemplate;
 import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoRespuestaTemplate;
+import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoSlugTemplate;
 import com.cosmos_api.Cosmos.API.domain.services.TemplateService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -47,6 +48,19 @@ public class TemplateController {
                     template.getSlug(),
                     template.getVariant().toString()))
                 .collect(Collectors.toList()));
+    }
+
+    @PostMapping("/find/slug")
+    @Operation(summary = "Busca un template según slug")
+    public ResponseEntity<?> buscarPorSlug(@RequestBody DtoSlugTemplate dtoSlugTemplate) {
+        var template = templateService.buscarSlug(dtoSlugTemplate.slug(), dtoSlugTemplate.usuarioId());
+        return ResponseEntity.ok()
+                .body(new DtoRespuestaTemplate(
+                        template.getId(),
+                        template.getName(),
+                        template.getImage(),
+                        template.getSlug(),
+                        template.getVariant().toString()));
     }
 
 }

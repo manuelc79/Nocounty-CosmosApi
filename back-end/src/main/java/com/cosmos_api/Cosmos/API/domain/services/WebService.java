@@ -57,5 +57,10 @@ public class WebService {
         }
         return web;
     }
+
+    public Web buscarSlug(String slug, Long usuarioId) {
+        var template = webRepository.findByUsuarioIdAndSlug(usuarioId, slug);
+        return template;
+    }
 }
 

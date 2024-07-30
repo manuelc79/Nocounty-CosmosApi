@@ -12,5 +12,7 @@ public interface WebRepository extends JpaRepository<Web, Long> {
 
     boolean existsBySlug(String slug);
 
+    Web findByUsuarioIdAndSlug(Long usuarioId, String slug);
+
 
 }

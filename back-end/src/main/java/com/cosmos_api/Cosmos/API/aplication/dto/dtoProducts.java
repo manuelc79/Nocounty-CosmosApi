@@ -26,7 +26,7 @@ public class dtoProducts {
 
     @JsonIgnore
     private Long idproducts;
-    
+
     private String name;
 
     private String brand;
@@ -35,18 +35,18 @@ public class dtoProducts {
 
     private String code;
 
-    private String price;
+    private double price;
 
-    private String stock;
+    private int stock;
 
     private String color;
 
-    private String discount;
+    private int discount;
 
     private String tag;
 
     private String description;
-    
+
     private List<String> images;
 
 }

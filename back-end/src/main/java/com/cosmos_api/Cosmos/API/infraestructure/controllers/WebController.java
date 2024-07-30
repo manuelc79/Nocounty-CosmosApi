@@ -1,5 +1,7 @@
 package com.cosmos_api.Cosmos.API.infraestructure.controllers;
 
+import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoRespuestaTemplate;
+import com.cosmos_api.Cosmos.API.aplication.dto.template.DtoSlugTemplate;
 import com.cosmos_api.Cosmos.API.aplication.dto.web.DtoBuscaIdWeb;
 import com.cosmos_api.Cosmos.API.aplication.dto.web.DtoRegistraWeb;
 import com.cosmos_api.Cosmos.API.aplication.dto.web.DtoRespuestaWeb;
@@ -49,6 +51,19 @@ public class WebController {
                     web.getVariant().toString(),
                     web.getGrupoId()))
                 .collect(Collectors.toList()));
+    }
+
+    @PostMapping("/find/slug")
+    @Operation(summary = "Busca un web según slug")
+    public ResponseEntity<?> buscarPorSlug(@RequestBody DtoSlugTemplate dtoSlugTemplate) {
+        var template = webService.buscarSlug(dtoSlugTemplate.slug(), dtoSlugTemplate.usuarioId());
+        return ResponseEntity.ok()
+                .body(new DtoRespuestaTemplate(
+                        template.getId(),
+                        template.getName(),
+                        template.getImage(),
+                        template.getSlug(),
+                        template.getVariant().toString()));
     }
 
 }

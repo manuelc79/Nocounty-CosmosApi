@@ -51,8 +51,8 @@ public class ProductsService implements IProductsService {
                 .brand(dtoproducts.getBrand())
                 .category(dtoproducts.getCategory())
                 .code(dtoproducts.getCode())
-                .price(Double.parseDouble(dtoproducts.getPrice()))
-                .stock(Integer.parseInt(dtoproducts.getStock()))
+                .price(dtoproducts.getPrice())
+                .stock(dtoproducts.getStock())
                 .color(dtoproducts.getColor())
                 .discount(dtoproducts.getDiscount())
                 .tag(dtoproducts.getTag())
@@ -97,8 +97,8 @@ public class ProductsService implements IProductsService {
         products.setBrand(dtoproducts.getBrand());
         products.setCategory(dtoproducts.getCategory());
         products.setCode(dtoproducts.getCode());
-        products.setPrice(Double.parseDouble(dtoproducts.getPrice()));
-        products.setStock(Integer.parseInt(dtoproducts.getStock()));
+        products.setPrice(dtoproducts.getPrice());
+        products.setStock(dtoproducts.getStock());
         products.setColor(dtoproducts.getColor());
         products.setDiscount(dtoproducts.getDiscount());
         products.setTag(dtoproducts.getTag());

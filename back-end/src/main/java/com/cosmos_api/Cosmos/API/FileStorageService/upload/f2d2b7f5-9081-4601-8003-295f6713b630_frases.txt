@@ -1,0 +1,21 @@
+"¿Qué hace una abeja en el gimnasio? ¡Zum-ba!",
+"¿Cuál es el colmo de un electricista? ¡No tener corriente para trabajar!",
+"¿Por qué los pájaros no usan Facebook? ¡Porque ya tienen Twitter!",
+"¿Cómo llama Superman a su madre? ¡Supermadre!",
+"¿Cuál es el animal más antiguo? ¡La cebra, porque está en blanco y negro!",
+"¿Qué le dice una iguana a su hermana gemela? ¡Iguanita!",
+"¿Qué hace una vaca en una montaña? ¡Leche condensada!",
+"¿Qué le dice un perro a otro perro? ¡Guau, guau!",
+"¿Qué hace una persona con un sobre de ketchup en la oreja? ¡Escuchando salsa!",
+"¿Qué le dice una uva verde a una roja? ¡¡Respira, respira!!"
+
+"'El éxito no es la clave de la felicidad. La felicidad es la clave del éxito. Si amas lo que haces, tendrás éxito.' - Albert Schweitzer",
+"'La vida es 10% lo que me pasa y 90% cómo reacciono a ello.' - Charles R. Swindoll",
+"'No importa lo lento que vayas, siempre y cuando no te detengas.' - Confucio",
+"'Cree en ti mismo y todo será posible.' - Anónimo",
+"'El único modo de hacer un gran trabajo es amar lo que haces.' - Steve Jobs",
+"'No dejes que los sueños sean sueños, haz que se conviertan en realidad.' - Anónimo",
+"'El éxito no es definitivo, el fracaso no es fatal: es el coraje para continuar lo que cuenta.' - Winston Churchill",
+"'La actitud es una pequeña cosa que hace una gran diferencia.' - Anónimo",
+"'El único límite para tus logros es tu imaginación.' - Anónimo",
+"'No esperes a que pase la tormenta, aprende a bailar bajo la lluvia.' - Anónimo"

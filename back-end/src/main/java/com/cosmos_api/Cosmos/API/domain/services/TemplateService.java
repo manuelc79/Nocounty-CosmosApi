@@ -56,5 +56,10 @@ public class TemplateService {
         }
         return template;
     }
+
+    public Template buscarSlug(String slug, Long usuarioId) {
+        var template = templateRepository.findByUsuarioIdAndSlug(usuarioId, slug);
+        return template;
+    }
 }
 
